@@ -59,9 +59,9 @@
 <!-- News -->
 <div data-role="page" id="articles">
     <div class="page-title">
-        <span class="title">News</span>
+        <span class="title">Articles</span>
     </div>
-    <ul data-role="listview" data-divider-theme="b" class="list">
+    <ul id="articleList" data-role="listview" data-divider-theme="b" class="list">
         <li data-theme="c">
             <a href="#a1" data-transition="slide">
                 World of CEOs – George Barrett
@@ -118,6 +118,7 @@
             </a>
         </li>
     </ul>
+
     <div data-theme="a" data-role="footer" data-position="fixed">
         <div data-role="navbar" data-iconpos="top">
             <ul>
@@ -1249,11 +1250,13 @@
 </div>
 
 <script>
-  $('video').mediaelementplayer({
-    success: function(media, node, player) {
-      $('#' + node.id + '-mode').html('mode: ' + media.pluginType);
-    }
-  });
+    $('video').mediaelementplayer({
+        success: function(media, node, player) {
+            $('#' + node.id + '-mode').html('mode: ' + media.pluginType);
+        }
+    });
+
+    $('#articleList').listview('refresh');
 </script>
 </body>
 </html>
