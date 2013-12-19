@@ -1123,10 +1123,11 @@
         $("#tweetList").html("");
         $("#loader").css("visibility","visible");
         //var twitterAPI = "http://localhost:2014/data/getdata?type=SearchTweets&q='George Barrett'";
-        var twitterAPI = "http://54.215.134.149:8080/data/getdata?type=SearchTweets&q='George Barrett'";
+        var twitterAPI = "http://54.215.134.149:8080/data/getdata?type=SearchTweets&q='CardinalHealth'";
         $.getJSON( twitterAPI, {
             format: "json"
         }).done(function( data ) {
+            console.log(data);
             var tweets = JSON.parse(data.Error);
             for(var i = 0; i < tweets.statuses.length; i++) {
                 $('#tweetList').append(
