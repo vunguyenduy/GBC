@@ -140,13 +140,12 @@
 
 .right {
 	font-family: bar-font;
-	font-size: 1.3em;
+	font-size: 1em;
 	text-decoration: none;
-	height: 34px;
 	color: #157dfb;
-	position: fixed;
-    top: 28px;
-    right: 12px;
+	float: right;
+    margin-top: 25px;
+    margin-right: 12px;
 }
 
 .arrow {

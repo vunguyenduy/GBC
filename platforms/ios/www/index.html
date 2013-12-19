@@ -1075,13 +1075,17 @@
 <div data-role="page" id="videos">
     <div class="page-title">
         <span class="title">Tweets</span>
+        <a class="right" href='javascript:getTweets();'>
+            Refresh
+        </a>
     </div>
-    <a class="right" href='javascript:getTweets();'>
-        Refresh
-    </a>
     <div id="tweetList" class="list">
         
     </div>
+    <div id="loader" style="visibility:hidden">
+        <img src="css/images/ajax-loader.gif" style="display: block;margin-left: auto; margin-right: auto;">
+    </div>
+
     <div data-theme="a" data-role="footer" data-position="fixed">
         <div data-role="navbar" data-iconpos="top">
             <ul>
@@ -1117,6 +1121,7 @@
 
     function getTweets() {
         $("#tweetList").html("");
+        $("#loader").css("visibility","visible");
         //var twitterAPI = "http://localhost:2014/data/getdata?type=SearchTweets&q='George Barrett'";
         var twitterAPI = "http://54.215.134.149:8080/data/getdata?type=SearchTweets&q='George Barrett'";
         $.getJSON( twitterAPI, {
@@ -1132,6 +1137,7 @@
                     +"</div>");
             }
         });
+        $("#loader").css("visibility","hidden");
     }
 
     getTweets();
