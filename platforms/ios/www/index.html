@@ -1127,7 +1127,6 @@
         $.getJSON( twitterAPI, {
             format: "json"
         }).done(function( data ) {
-            console.log(data);
             var tweets = JSON.parse(data.Error);
             for(var i = 0; i < tweets.statuses.length; i++) {
                 $('#tweetList').append(
@@ -1136,8 +1135,9 @@
                         + "<div class='tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
                     +"</div>");
             }
+
+            $("#loader").css("visibility","hidden");
         });
-        $("#loader").css("visibility","hidden");
     }
 
     getTweets();
