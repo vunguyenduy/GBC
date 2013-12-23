@@ -15,7 +15,7 @@
 
 .gb-name {
 	text-align: center;
-	font-size:1.5em;
+	font-size:1.6em;
 	font-family:name-font;
 	color: #adadad;
     margin:10px;
@@ -24,6 +24,7 @@
 .gb-job {
 	text-align: center;
 	font-family:bar-font;
+	font-size: 1.2em;
 }
 
 .gb-img {
@@ -70,6 +71,7 @@
     width: 80%;
     list-style-type: none;
     font-family: bar-font;
+    font-size: 1.2em;
 }
 
 .hlist a {
