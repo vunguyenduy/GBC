@@ -249,6 +249,13 @@
 	color: #12B5EA;
 }
 
+.hsource{
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+	color: #12B5EA;
+}
+
 .ar-date{
 	float:right;
 	font-size:.8em;
@@ -265,4 +272,12 @@
 
 .ar-title{
 	margin-top:10px;font-size:.9em;color:#c2c2c2;
+}
+
+.har-title{
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+	font-size:.9em;color:#fff;
 }

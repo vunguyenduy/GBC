@@ -27,71 +27,71 @@
         </div>
 
         <ul id="news" class="hlist">
-            <li style="z-index: 3; position: absolute; display: block;">
+            <li style="display: block;">
                 <a href="#v1" data-transition="slide" onclick="playSelectedVideo('video1')">
-                    <div class="source">Russell Reynolds Associates</div><br/>
-                    <div class="ar-title">Cardinal Health's Chairman & CEO George Barrett on Board Leadership</div>
+                    <div class="hsource">Russell Reynolds Associates</div>
+                    <div class="har-title">Cardinal Health's Chairman & CEO George Barrett on Board Leadership</div>
                 </a>
             </li>
         
-            <li style="z-index: 3; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a7" data-transition="slide">
-                    <div class="source">The Columbus Dispatch</div><br/>
-                    <div class="ar-title">Cardinal Health's CEO uses background to think outside the box</div>
+                    <div class="hsource">The Columbus Dispatch</div>
+                    <div class="har-title">Cardinal Health's CEO uses background to think outside the box</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a11" data-transition="slide">
-                    <div class="source">Columbus C.E.O</div><br/>
-                    <div class="ar-title">Cardinal CEO George Barrett: ‘Navigating’ amid health-care storm</div>
+                    <div class="hsource">Columbus C.E.O</div>
+                    <div class="har-title">Cardinal CEO George Barrett: ‘Navigating’ amid health-care storm</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a2" data-transition="slide">
-                    <div class="source">Columbus Biz Insider</div><br/>
-                    <div class="ar-title">Cardinal Health CEO George Barrett not sounding wounded over Walgreens walking</div>
+                    <div class="hsource">Columbus Biz Insider</div>
+                    <div class="har-title">Cardinal Health CEO George Barrett not sounding wounded over Walgreens walking</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a6" data-transition="slide">
-                    <div class="source">Columbus C.E.O</div><br/>
-                    <div class="ar-title">Shattering the Ceiling</div>
+                    <div class="hsource">Columbus C.E.O</div>
+                    <div class="har-title">Shattering the Ceiling</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a8" data-transition="slide">
-                    <div class="source">dealbook.nytimes.com</div><br/>
-                    <div class="ar-title">Cardinal Health Is Buying Large Medical Supplier for $2 Billion</div>
+                    <div class="hsource">dealbook.nytimes.com</div>
+                    <div class="har-title">Cardinal Health Is Buying Large Medical Supplier for $2 Billion</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a1" data-transition="slide">
-                    <div class="source">New York Times</div><br/>
-                    <div class="ar-title">World of CEOs – George Barrett</div>
+                    <div class="hsource">New York Times</div>
+                    <div class="har-title">World of CEOs – George Barrett</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a5" data-transition="slide">
-                    <div class="source">Cardinal Health</div><br/>
-                    <div class="ar-title">Statement of Chairman and CEO George Barrett Fortune 21 Cardinal Health Regarding Fiscal Cliff</div>
+                    <div class="hsource">Cardinal Health</div>
+                    <div class="har-title">Statement of Chairman and CEO George Barrett Fortune 21 Cardinal Health Regarding Fiscal Cliff</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a3" data-transition="slide">
-                    <div class="source">Examiner.com</div><br/>
-                    <div class="ar-title">George S. Barrett (Cardinal Health) in "the Corner Office”</div>
+                    <div class="hsource">Examiner.com</div>
+                    <div class="har-title">George S. Barrett (Cardinal Health) in "the Corner Office”</div>
                 </a>
             </li>        
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a9" data-transition="slide">
-                    <div class="source">staplessoccer.wordpress.com</div><br/>
-                    <div class="ar-title">Profile: George Barrett ’73, CEO of Cardinal Health</div>
+                    <div class="hsource">staplessoccer.wordpress.com</div>
+                    <div class="har-title">Profile: George Barrett ’73, CEO of Cardinal Health</div>
                 </a>
             </li>
-            <li style="z-index: 2; position: absolute; display: none;">
+            <li style="display: none;">
                 <a href="#a4" data-transition="slide">
-                    <div class="source">New York Times</div><br/>
-                    <div class="ar-title">Team Insights? Just Use Your Peripheral Vision</div>
+                    <div class="hsource">New York Times</div>
+                    <div class="har-title">Team Insights? Just Use Your Peripheral Vision</div>
                 </a>
             </li>
         </ul>
@@ -1238,16 +1238,16 @@
 </script>
 
     <script>
-        var tid = setInterval(mycode, 5000);
+        var tid = setInterval(showNext, 5000);
         var totalEl = $('#news').children().length;
         var currentEl = 0;
-        function mycode() {
-            if(currentEl < totalEl - 1)
-                currentEl += 1;
-            else
-                currentEl = 0;
+        function showNext() {
+            $('#news').children().eq(currentEl).slideUp( "slow", function() {
+                if(currentEl < totalEl - 1)
+                    currentEl += 1;
+                else
+                    currentEl = 0;
 
-            $('#news').children().slideUp( "slow", function() {
                 $('#news').children().eq(currentEl).fadeIn("slow");
             });
         }        
