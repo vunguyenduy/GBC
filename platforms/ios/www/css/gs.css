@@ -68,7 +68,7 @@
 .hlist {
 	position: absolute;
     bottom: 25%;
-    width: 80%;
+    width: 100%;
     list-style-type: none;
     font-family: bar-font;
     font-size: 1.2em;
@@ -251,8 +251,6 @@
 
 .hsource{
 	text-align: center;
-	margin-left: auto;
-    margin-right: auto;
 	color: #12B5EA;
 }
 
@@ -276,8 +274,6 @@
 
 .har-title{
 	text-align: center;
-	margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
+    margin: 10px;
 	font-size:.9em;color:#fff;
 }
