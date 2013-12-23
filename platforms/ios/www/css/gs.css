@@ -191,9 +191,9 @@
 }
 
 .user{
+	padding-top: 4px;
 	font-family: bar-font;
 	font-size: 1.2em;
-	margin-top: 2px;
 	position: relative;
 	word-wrap: break-word;
 	padding-left: 60px;
@@ -231,6 +231,7 @@
 
 .source{
 	float: left;
+	color: #12B5EA;
 }
 
 .ar-date{
