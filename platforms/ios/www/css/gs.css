@@ -8,8 +8,7 @@
 	src: url('../font/Ubuntu-L.ttf');
 }
 
-.ui-page { 
-	-webkit-backface-visibility: hidden;
+.ui-page {
 	background-image:url('../img/bg.jpg');
 }
 
