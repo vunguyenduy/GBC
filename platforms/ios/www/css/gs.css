@@ -66,8 +66,8 @@
 
 .hlist {
 	margin-top: 35%;
-    width: 100%;
-    list-style-type: none;
+	padding: 50px;
+    width: 90%;
     font-family: bar-font;
     font-size: 1.2em;
 }
@@ -198,13 +198,35 @@
 	color: #ebebeb;
 }
 
+.t-tweet{
+	float: left;
+	font-family: bar-font;
+	word-wrap: break-word;
+	color: #ebebeb;
+	font-size: .9em;
+	margin-top: 5px;
+}
+
 .t-img{
 	float: left;
 	margin: 5px;
 }
 
+.tt-img{
+	float: left;
+}
+
 .user{
 	padding-top: 4px;
+	font-family: bar-font;
+	font-size: 1.2em;
+	position: relative;
+	word-wrap: break-word;
+	padding-left: 60px;
+	color: #12B5EA;
+}
+
+.t-user{
 	font-family: bar-font;
 	font-size: 1.2em;
 	position: relative;
@@ -264,6 +286,13 @@
 	margin-top: -15px;
 	margin-right: 12px;
     float:right;font-size:.8em;color:#c2c2c2;
+}
+
+.tt-date{
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+    font-size:.8em;color:#c2c2c2;
 }
 
 .ar-title{

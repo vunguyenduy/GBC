@@ -28,73 +28,7 @@
         </div>
 
         <div id="news" class="hlist">
-            <div style="display: block;">
-                <a href="#v1" data-transition="slide" onclick="playSelectedVideo('video1')">
-                    <div class="hsource">Russell Reynolds Associates</div>
-                    <div class="har-title">Cardinal Health's Chairman & CEO George Barrett on Board Leadership</div>
-                </a>
-            </div>
-        
-            <div style="display: none;">
-                <a href="#a7" data-transition="slide">
-                    <div class="hsource">The Columbus Dispatch</div>
-                    <div class="har-title">Cardinal Health's CEO uses background to think outside the box</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a11" data-transition="slide">
-                    <div class="hsource">Columbus C.E.O</div>
-                    <div class="har-title">Cardinal CEO George Barrett: ‘Navigating’ amid health-care storm</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a2" data-transition="slide">
-                    <div class="hsource">Columbus Biz Insider</div>
-                    <div class="har-title">Cardinal Health CEO George Barrett not sounding wounded over Walgreens walking</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a6" data-transition="slide">
-                    <div class="hsource">Columbus C.E.O</div>
-                    <div class="har-title">Shattering the Ceiling</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a8" data-transition="slide">
-                    <div class="hsource">dealbook.nytimes.com</div>
-                    <div class="har-title">Cardinal Health Is Buying Large Medical Supplier for $2 Billion</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a1" data-transition="slide">
-                    <div class="hsource">New York Times</div>
-                    <div class="har-title">World of CEOs – George Barrett</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a5" data-transition="slide">
-                    <div class="hsource">Cardinal Health</div>
-                    <div class="har-title">Statement of Chairman and CEO George Barrett Fortune 21 Cardinal Health Regarding Fiscal Cliff</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a3" data-transition="slide">
-                    <div class="hsource">Examiner.com</div>
-                    <div class="har-title">George S. Barrett (Cardinal Health) in "the Corner Office”</div>
-                </a>
-            </div>        
-            <div style="display: none;">
-                <a href="#a9" data-transition="slide">
-                    <div class="hsource">staplessoccer.wordpress.com</div>
-                    <div class="har-title">Profile: George Barrett ’73, CEO of Cardinal Health</div>
-                </a>
-            </div>
-            <div style="display: none;">
-                <a href="#a4" data-transition="slide">
-                    <div class="hsource">New York Times</div>
-                    <div class="har-title">Team Insights? Just Use Your Peripheral Vision</div>
-                </a>
-            </div>
+            
         </div>
     </div>
 
@@ -1170,7 +1104,8 @@
 
 <script>
     $('[data-position=fixed]').fixedtoolbar({ tapToggle:false});
-    
+    var totalEl = 0;
+
     currentVideoId = "";
     function playSelectedVideo(id){
         currentVideoId = id;
@@ -1200,18 +1135,49 @@
 
                 var pp = Date.parse(tweets.statuses[i].created_at);
                 var newDate = new Date(pp);
-                //if(tweets.statuses[i].retweeted_status){
-                    $('#tweetList').append(
+
+                $('#tweetList').append(
                         "<div class='tbg'>"
-                            + "<img class='t-img' src='" + tweets.statuses[i].user.profile_image_url + "'/>"
-                            + "<div class='user'>" + tweets.statuses[i].user.name + "</div>"
-                            + "<div class='t-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div>"
-                            + "<div class='tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
+                        + "<img class='t-img' src='" + tweets.statuses[i].user.profile_image_url + "'/>"
+                        + "<div class='user'>" + tweets.statuses[i].user.name + "</div>"
+                        + "<div class='t-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div>"
+                        + "<div class='tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
                         +"</div>");
-                //}
+
+                if(i == 0){
+                    $('#news').append(
+                        "<div style='display:block'>"
+                        + "<img class='tt-img' src='" + tweets.statuses[i].user.profile_image_url + "'/>"
+                        + "<div class='t-user'>" + tweets.statuses[i].user.name + "</div>"
+                        + "<div class='tt-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div>"
+                        + "<div class='t-tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
+                        +"</div>");
+                }else{
+                    $('#news').append(
+                        "<div style='display:none'>"
+                        + "<img class='tt-img' src='" + tweets.statuses[i].user.profile_image_url + "'/>"
+                        + "<div class='t-user'>" + tweets.statuses[i].user.name + "</div>"
+                        + "<div class='tt-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div><br/>"
+                        + "<div class='t-tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
+                        +"</div>");
+                }
             }
 
+            totalEl = tweets.statuses.length;
+            var currentEl = 0;
             $("#loader").css("visibility","hidden");
+
+            // Bind tweets to the home page
+            var tid = setInterval(function() {
+                $('#news').children().eq(currentEl).slideUp( "slow", function() {
+                    if(currentEl < totalEl - 1)
+                        currentEl += 1;
+                    else
+                        currentEl = 0;
+
+                    $('#news').children().eq(currentEl).fadeIn("slow");
+                });
+            }, 5000);
         });
     }
 
@@ -1242,19 +1208,7 @@
 </script>
 
     <script>
-        var tid = setInterval(showNext, 5000);
-        var totalEl = $('#news').children().length;
-        var currentEl = 0;
-        function showNext() {
-            $('#news').children().eq(currentEl).slideUp( "slow", function() {
-                if(currentEl < totalEl - 1)
-                    currentEl += 1;
-                else
-                    currentEl = 0;
-
-                $('#news').children().eq(currentEl).fadeIn("slow");
-            });
-        }        
+        
     </script>
 </body>
 </html>
