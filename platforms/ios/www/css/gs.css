@@ -9,10 +9,8 @@
 }
 
 .ui-page { 
-	background: #2c2c2c;
+	-webkit-backface-visibility: hidden;
 	background-image:url('../img/bg.jpg');
-	-webkit-transform:translate3d(0,0,0);
-	transform:translate3d(0,0,0);
 }
 
 .gb-name {
