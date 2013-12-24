@@ -65,11 +65,10 @@
 }
 
 .hlist {
-	margin-top: 25%;
+	margin-top: 20%;
 	padding: 50px;
     width: 90%;
     font-family: bar-font;
-    font-size: 1.2em;
 }
 
 .hlist a {
@@ -203,8 +202,10 @@
 	font-family: bar-font;
 	word-wrap: break-word;
 	color: #ebebeb;
-	font-size: .9em;
+	font-size: .8em;
 	margin-top: 5px;
+	text-align: left;
+	clear: both;
 }
 
 .t-img{

@@ -1157,7 +1157,7 @@
                         "<div style='display:none'>"
                         + "<img class='tt-img' src='" + tweets.statuses[i].user.profile_image_url + "'/>"
                         + "<div class='t-user'>" + tweets.statuses[i].user.name + "</div>"
-                        + "<div class='tt-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div><br/>"
+                        + "<div class='tt-date'>" + newDate.getDate() + " " + getMonthName(newDate.getMonth()) + "</div>"
                         + "<div class='t-tweet'>" + tweets.statuses[i].text + "</div><div style='clear:both'></div>"
                         +"</div>");
                 }
@@ -1190,19 +1190,6 @@
                 return months[i];
             }
         }
-    }
-
-    var getFavicon = function(){
-        var favicon = undefined;
-        var nodeList = document.getElementsByTagName("link");
-        for (var i = 0; i < nodeList.length; i++)
-        {
-            if((nodeList[i].getAttribute("rel") == "icon")||(nodeList[i].getAttribute("rel") == "shortcut icon"))
-            {
-                favicon = nodeList[i].getAttribute("href");
-            }
-        }
-        return favicon;        
     }
 
 </script>
