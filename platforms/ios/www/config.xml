@@ -24,7 +24,10 @@
     <icon src="img/icons/android/gb-icon-63.png" gap:platform="android" gap:density="mdpi" />
     <icon src="img/icons/android/gb-icon-94.png" gap:platform="android" gap:density="hdpi" />
     <icon src="img/icons/android/gb-icon-125.png" gap:platform="android" gap:density="xhdpi" />
-    
+
+    <icon src="img/icons/bb/gb-icon-68.png" gap:platform="blackberry" />
+    <icon src="img/icons/bb/gb-icon-68.png" gap:platform="blackberry" gap:state="hover"/>
+
     <gap:splash src="img/splash/GeorgeBarrett-splash-320x480.png" />
     
     <gap:splash src="img/splash/GeorgeBarrett-splash-320x480.png" gap:platform="ios" width="320" height="480" />
@@ -39,4 +42,10 @@
     <gap:splash src="img/splash/GeorgeBarrett-splash-640x960.png" gap:platform="android" gap:density="mdpi" />
     <gap:splash src="img/splash/GeorgeBarrett-splash-1536x2008.png" gap:platform="android" gap:density="hdpi" />
     <gap:splash src="img/splash/GeorgeBarrett-splash-1536x2008.png" gap:platform="android" gap:density="xhdpi" />
+
+    <!-- For BB-->
+    <gap:splash src="img/splash/GeorgeBarrett-splash-640x960.png" gap:platform="blackberry" />
+
+    <!-- For WP-->
+    <gap:splash src="img/splash/GeorgeBarrett-splash-640x960.png" gap:platform="winphone" />
 </widget>
