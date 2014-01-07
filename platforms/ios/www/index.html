@@ -66,7 +66,7 @@
     <ul id="articleList" data-role="listview" data-divider-theme="b" class="list">
         <li data-theme="c" class="vi-bullet">
             <a href="#v1" data-transition="slide" onclick="playSelectedVideo('video1')">
-                <div class="source">Russell Reynolds Associates</div><div class="ar-date">Jan 16, 2013</div><br/>
+                <div class="source">Youtube</div><br/>
                 <div class="ar-title">Cardinal Health's Chairman & CEO George Barrett on Board Leadership</div>
             </a>
         </li>
@@ -169,8 +169,8 @@
         Cardinal Health's Chairman & CEO George Barrett on Board Leadership
     </div>
     <div class="a-body">
-        <video id="video1" style="width:300px" controls>
-            <source src="http://54.215.134.149:8080/file/getFile/g1.mp4" type="video/mp4">
+        <video id="video1" style="width:98%" controls>
+            <source src="https://s3-us-west-2.amazonaws.com/fusa/George+Barrett/g1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -1125,8 +1125,7 @@
     function getTweets() {
         $("#tweetList").html("");
         $("#loader").css("visibility","visible");
-        //var twitterAPI = "http://localhost:2014/data/getdata?type=SearchTweets&q='George Barrett'";
-        var twitterAPI = "http://54.215.134.149:8080/data/getdata?type=SearchTweets&q='CardinalHealth'";
+        var twitterAPI = "http://54.201.207.238:8080/data/getdata?type=SearchTweets&q='CardinalHealth'";
         $.getJSON( twitterAPI, {
             format: "json"
         }).done(function( data ) {
